@@ -6,9 +6,9 @@ export default class Particle {
     this.vel = new Vector(1, 0);
     this.acc = new Vector(0, 0);
     this.prevPos = this.pos.copy();
-    this.maxSpeed = 4;
+    this.maxSpeed = 3;
     this.p5 = p5;
-    this.radius = 1;
+    this.radius = 5;
   }
 
   update() {
@@ -31,7 +31,7 @@ export default class Particle {
   wrapEdges() {
     if (this.pos.x > this.p5.width) {
       this.pos.x = 0;
-      this.prevPs.x = 0;
+      this.prevPos.x = 0;
     }
     if (this.pos.x < 0) {
       this.pos.x = this.p5.width;

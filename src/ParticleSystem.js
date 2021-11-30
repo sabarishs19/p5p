@@ -9,7 +9,7 @@ function fetchStroke(p5) {
   if (r < 25) {
     return [194, 194, 194, 25];
   } else {
-    return [230, 105, 22, 25];
+    return [39, 255, 0, 100];
   }
 }
 
@@ -20,7 +20,7 @@ export default function ParticleSystem({ num }) {
   const flowfield = useRef(null);
 
   useEffect(() => {
-    particles.current = new Array(null).fill(null).map(() => new Particle(p5));
+    particles.current = new Array(num).fill(null).map(() => new Particle(p5));
 
     flowfield.current = new FlowField(
       scale,
@@ -40,7 +40,7 @@ export default function ParticleSystem({ num }) {
   let particleEls = null;
   if (particles.current) {
     particleEls = particles.current.map((p, i) => {
-      const args = [p.pos.x, p.pos.y, p.prevPos.x, p.prevPs.y];
+      const args = [p.pos.x, p.pos.y, p.prevPos.x, p.prevPos.y];
       p.updatePrev();
       return <line stroke={fetchStroke} key={i} args={args} />;
     });

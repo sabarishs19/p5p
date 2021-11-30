@@ -5,7 +5,7 @@ import ParticleSystem from "./ParticleSystem";
 
 function App() {
   return (
-    <Canvas size={[750, 750]} background="#231f20" noStroke noClear>
+    <Canvas size={[750, 750]} background="#010730" noStroke noClear>
       <colorMode args={(p5) => [p5.RGB]}>
         <ParticleSystem num={300} />
       </colorMode>
